@@ -53,10 +53,11 @@ int main(int argc, char** argv) {
 
     ///* create render data in RAM */
     GLuint positionAttribIndex = 0;
-    float positions[] = { 0.0, 0.0,  // 1st vertex
-                          0.5, 0.0,  // 2nd vertex
-                          0.5, 0.5,  // 3rd vertex  
-                          0.0, 0.5   // 4th vertex
+    float positions_colors[] = { 
+                        0.0f, 0.0f,     1.0f, 0.0f, 0.0f, // 1st vertex
+                        0.5f, 0.0f,     0.0f, 1.0f, 0.0f, // 2nd vertex
+                        0.5f, 0.5f,     0.0f, 0.0f, 1.0f,// 3rd vertex  
+                        0.0f, 0.5f,     1.0f, 1.0f, 1.0f, // 4th vertex
     };
 
 
@@ -71,31 +72,17 @@ int main(int argc, char** argv) {
     glBindBuffer(GL_ARRAY_BUFFER, positionsBuffer);
 
     ///* declare what data in RAM are filling the bufferin video RAM */
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 8, positions, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(positions_colors), positions_colors, GL_STATIC_DRAW);
 
     glEnableVertexAttribArray(positionAttribIndex);
     ///* specify the data format */
-    glVertexAttribPointer(positionAttribIndex, 2, GL_FLOAT, false, 0, 0);
-
-    ///* create render data in RAM */
-    GLuint colorAttribIndex = 1;
-    float colors[] = {  1.0, 0.0, 0.0,    // 1st vertex's color
-                        0.0, 1.0, 0.0,   // 2nd vertex's color
-                        0.0, 0.0, 1.0,
-                        1.0, 1.0, 1.0
-                    };
-
-    ///* create a buffer for the render data in video RAM */
-    GLuint colorBuffer;
-    glGenBuffers(1, &colorBuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, colorBuffer);
-
+    glVertexAttribPointer(positionAttribIndex, 2, GL_FLOAT, false, 5 * sizeof(float), 0);
     ///* declare what data in RAM are filling the bufferin video RAM */
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 12, colors, GL_STATIC_DRAW);
 
+    GLuint colorAttribIndex = 1;
     glEnableVertexAttribArray(colorAttribIndex);
     ///* specify the data format */
-    glVertexAttribPointer(colorAttribIndex, 3, GL_FLOAT, false, 0, 0);
+    glVertexAttribPointer(colorAttribIndex, 3, GL_FLOAT, false, 5 * sizeof(float), (void*)(2 * sizeof(float)));
 
     GLuint indices[] = { 0,1,2,0,2,3 };
     GLuint indexBuffer;
