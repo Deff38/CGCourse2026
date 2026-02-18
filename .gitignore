@@ -43,6 +43,14 @@ ScaffoldingReadMe.txt
 *~
 CodeCoverage/
 
+
+# File cmake 
+**/CMakeFiles/
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/Makefile
+**/cmake_uninstall.cmake
+
 # MSBuild Binary and Structured Log
 *.binlog
 
