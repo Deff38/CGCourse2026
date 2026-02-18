@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/code_02_my_first_triangle.dir/link.d"
   "CMakeFiles/code_02_my_first_triangle.dir/main_02.cpp.o"
   "CMakeFiles/code_02_my_first_triangle.dir/main_02.cpp.o.d"
   "code_02_my_first_triangle"

@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E rm -f
+RM = /opt/homebrew/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/deff/CGCourse2026
+CMAKE_SOURCE_DIR = /Users/cirosuna/CGCourse2026
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/deff/CGCourse2026
+CMAKE_BINARY_DIR = /Users/cirosuna/CGCourse2026
 
 # Include any dependencies generated for this target.
 include src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/depend.make
@@ -75,16 +75,16 @@ src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/codegen:
 src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/main_rt.cpp.o: src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/flags.make
 src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/main_rt.cpp.o: src/code_00_raytracer/main_rt.cpp
 src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/main_rt.cpp.o: src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/deff/CGCourse2026/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/main_rt.cpp.o"
-	cd /home/deff/CGCourse2026/src/code_00_raytracer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/main_rt.cpp.o -MF CMakeFiles/code_00_raytracer.dir/main_rt.cpp.o.d -o CMakeFiles/code_00_raytracer.dir/main_rt.cpp.o -c /home/deff/CGCourse2026/src/code_00_raytracer/main_rt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cirosuna/CGCourse2026/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/main_rt.cpp.o"
+	cd /Users/cirosuna/CGCourse2026/src/code_00_raytracer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/main_rt.cpp.o -MF CMakeFiles/code_00_raytracer.dir/main_rt.cpp.o.d -o CMakeFiles/code_00_raytracer.dir/main_rt.cpp.o -c /Users/cirosuna/CGCourse2026/src/code_00_raytracer/main_rt.cpp
 
 src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/main_rt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/code_00_raytracer.dir/main_rt.cpp.i"
-	cd /home/deff/CGCourse2026/src/code_00_raytracer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/deff/CGCourse2026/src/code_00_raytracer/main_rt.cpp > CMakeFiles/code_00_raytracer.dir/main_rt.cpp.i
+	cd /Users/cirosuna/CGCourse2026/src/code_00_raytracer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cirosuna/CGCourse2026/src/code_00_raytracer/main_rt.cpp > CMakeFiles/code_00_raytracer.dir/main_rt.cpp.i
 
 src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/main_rt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/code_00_raytracer.dir/main_rt.cpp.s"
-	cd /home/deff/CGCourse2026/src/code_00_raytracer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/deff/CGCourse2026/src/code_00_raytracer/main_rt.cpp -o CMakeFiles/code_00_raytracer.dir/main_rt.cpp.s
+	cd /Users/cirosuna/CGCourse2026/src/code_00_raytracer && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cirosuna/CGCourse2026/src/code_00_raytracer/main_rt.cpp -o CMakeFiles/code_00_raytracer.dir/main_rt.cpp.s
 
 # Object files for target code_00_raytracer
 code_00_raytracer_OBJECTS = \
@@ -95,20 +95,19 @@ code_00_raytracer_EXTERNAL_OBJECTS =
 
 src/code_00_raytracer/code_00_raytracer: src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/main_rt.cpp.o
 src/code_00_raytracer/code_00_raytracer: src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/build.make
-src/code_00_raytracer/code_00_raytracer: src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/compiler_depend.ts
 src/code_00_raytracer/code_00_raytracer: src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/deff/CGCourse2026/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable code_00_raytracer"
-	cd /home/deff/CGCourse2026/src/code_00_raytracer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/code_00_raytracer.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/cirosuna/CGCourse2026/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable code_00_raytracer"
+	cd /Users/cirosuna/CGCourse2026/src/code_00_raytracer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/code_00_raytracer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/build: src/code_00_raytracer/code_00_raytracer
 .PHONY : src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/build
 
 src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/clean:
-	cd /home/deff/CGCourse2026/src/code_00_raytracer && $(CMAKE_COMMAND) -P CMakeFiles/code_00_raytracer.dir/cmake_clean.cmake
+	cd /Users/cirosuna/CGCourse2026/src/code_00_raytracer && $(CMAKE_COMMAND) -P CMakeFiles/code_00_raytracer.dir/cmake_clean.cmake
 .PHONY : src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/clean
 
 src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/depend:
-	cd /home/deff/CGCourse2026 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/deff/CGCourse2026 /home/deff/CGCourse2026/src/code_00_raytracer /home/deff/CGCourse2026 /home/deff/CGCourse2026/src/code_00_raytracer /home/deff/CGCourse2026/src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/DependInfo.cmake "--color=$(COLOR)" code_00_raytracer
+	cd /Users/cirosuna/CGCourse2026 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cirosuna/CGCourse2026 /Users/cirosuna/CGCourse2026/src/code_00_raytracer /Users/cirosuna/CGCourse2026 /Users/cirosuna/CGCourse2026/src/code_00_raytracer /Users/cirosuna/CGCourse2026/src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/DependInfo.cmake "--color=$(COLOR)" code_00_raytracer
 .PHONY : src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/depend
 

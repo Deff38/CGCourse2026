@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/code_01_setup_glfw.dir/link.d"
   "CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o"
   "CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o.d"
   "code_01_setup_glfw"

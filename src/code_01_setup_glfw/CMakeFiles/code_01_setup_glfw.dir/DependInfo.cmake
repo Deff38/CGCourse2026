@@ -8,8 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/deff/CGCourse2026/src/code_01_setup_glfw/main_01.cpp" "src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o" "gcc" "src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o.d"
-  "" "src/code_01_setup_glfw/code_01_setup_glfw" "gcc" "src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/link.d"
+  "/Users/cirosuna/CGCourse2026/src/code_01_setup_glfw/main_01.cpp" "src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o" "gcc" "src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

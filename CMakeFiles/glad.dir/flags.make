@@ -4,7 +4,9 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/deff/CGCourse2026/external/glad/include
+C_INCLUDES = -I/Users/cirosuna/CGCourse2026/external/glad/include
 
-C_FLAGS = -std=gnu99
+C_FLAGSarm64 = -std=gnu99 -arch arm64
+
+C_FLAGS = -std=gnu99 -arch arm64
 

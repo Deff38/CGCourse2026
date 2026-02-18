@@ -8,8 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/deff/CGCourse2026/src/code_02_my_first_triangle/main_02.cpp" "src/code_02_my_first_triangle/CMakeFiles/code_02_my_first_triangle.dir/main_02.cpp.o" "gcc" "src/code_02_my_first_triangle/CMakeFiles/code_02_my_first_triangle.dir/main_02.cpp.o.d"
-  "" "src/code_02_my_first_triangle/code_02_my_first_triangle" "gcc" "src/code_02_my_first_triangle/CMakeFiles/code_02_my_first_triangle.dir/link.d"
+  "/Users/cirosuna/CGCourse2026/src/code_02_my_first_triangle/main_02.cpp" "src/code_02_my_first_triangle/CMakeFiles/code_02_my_first_triangle.dir/main_02.cpp.o" "gcc" "src/code_02_my_first_triangle/CMakeFiles/code_02_my_first_triangle.dir/main_02.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

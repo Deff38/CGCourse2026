@@ -43,8 +43,12 @@ ScaffoldingReadMe.txt
 *~
 CodeCoverage/
 
+<<<<<<< .merge_file_g7JyZ2
 
 # File cmake 
+=======
+# CMake generated files (all subdirectories)
+>>>>>>> .merge_file_EfkD9a
 **/CMakeFiles/
 **/CMakeCache.txt
 **/cmake_install.cmake

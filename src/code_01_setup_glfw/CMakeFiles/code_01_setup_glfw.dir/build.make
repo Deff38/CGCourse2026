@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E rm -f
+RM = /opt/homebrew/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/deff/CGCourse2026
+CMAKE_SOURCE_DIR = /Users/cirosuna/CGCourse2026
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/deff/CGCourse2026
+CMAKE_BINARY_DIR = /Users/cirosuna/CGCourse2026
 
 # Include any dependencies generated for this target.
 include src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/depend.make
@@ -75,16 +75,16 @@ src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/codegen:
 src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o: src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/flags.make
 src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o: src/code_01_setup_glfw/main_01.cpp
 src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o: src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/deff/CGCourse2026/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o"
-	cd /home/deff/CGCourse2026/src/code_01_setup_glfw && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o -MF CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o.d -o CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o -c /home/deff/CGCourse2026/src/code_01_setup_glfw/main_01.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cirosuna/CGCourse2026/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o"
+	cd /Users/cirosuna/CGCourse2026/src/code_01_setup_glfw && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o -MF CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o.d -o CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o -c /Users/cirosuna/CGCourse2026/src/code_01_setup_glfw/main_01.cpp
 
 src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.i"
-	cd /home/deff/CGCourse2026/src/code_01_setup_glfw && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/deff/CGCourse2026/src/code_01_setup_glfw/main_01.cpp > CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.i
+	cd /Users/cirosuna/CGCourse2026/src/code_01_setup_glfw && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cirosuna/CGCourse2026/src/code_01_setup_glfw/main_01.cpp > CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.i
 
 src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.s"
-	cd /home/deff/CGCourse2026/src/code_01_setup_glfw && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/deff/CGCourse2026/src/code_01_setup_glfw/main_01.cpp -o CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.s
+	cd /Users/cirosuna/CGCourse2026/src/code_01_setup_glfw && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cirosuna/CGCourse2026/src/code_01_setup_glfw/main_01.cpp -o CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.s
 
 # Object files for target code_01_setup_glfw
 code_01_setup_glfw_OBJECTS = \
@@ -95,26 +95,22 @@ code_01_setup_glfw_EXTERNAL_OBJECTS =
 
 src/code_01_setup_glfw/code_01_setup_glfw: src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/main_01.cpp.o
 src/code_01_setup_glfw/code_01_setup_glfw: src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/build.make
-src/code_01_setup_glfw/code_01_setup_glfw: src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/compiler_depend.ts
 src/code_01_setup_glfw/code_01_setup_glfw: external/glfw/src/libglfw3.a
 src/code_01_setup_glfw/code_01_setup_glfw: libglad.a
-src/code_01_setup_glfw/code_01_setup_glfw: /usr/lib/librt.a
-src/code_01_setup_glfw/code_01_setup_glfw: /usr/lib/libm.so
-src/code_01_setup_glfw/code_01_setup_glfw: /usr/lib/libGLX.so
-src/code_01_setup_glfw/code_01_setup_glfw: /usr/lib/libOpenGL.so
+src/code_01_setup_glfw/code_01_setup_glfw: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework
 src/code_01_setup_glfw/code_01_setup_glfw: src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/deff/CGCourse2026/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable code_01_setup_glfw"
-	cd /home/deff/CGCourse2026/src/code_01_setup_glfw && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/code_01_setup_glfw.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/cirosuna/CGCourse2026/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable code_01_setup_glfw"
+	cd /Users/cirosuna/CGCourse2026/src/code_01_setup_glfw && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/code_01_setup_glfw.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/build: src/code_01_setup_glfw/code_01_setup_glfw
 .PHONY : src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/build
 
 src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/clean:
-	cd /home/deff/CGCourse2026/src/code_01_setup_glfw && $(CMAKE_COMMAND) -P CMakeFiles/code_01_setup_glfw.dir/cmake_clean.cmake
+	cd /Users/cirosuna/CGCourse2026/src/code_01_setup_glfw && $(CMAKE_COMMAND) -P CMakeFiles/code_01_setup_glfw.dir/cmake_clean.cmake
 .PHONY : src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/clean
 
 src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/depend:
-	cd /home/deff/CGCourse2026 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/deff/CGCourse2026 /home/deff/CGCourse2026/src/code_01_setup_glfw /home/deff/CGCourse2026 /home/deff/CGCourse2026/src/code_01_setup_glfw /home/deff/CGCourse2026/src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/DependInfo.cmake "--color=$(COLOR)" code_01_setup_glfw
+	cd /Users/cirosuna/CGCourse2026 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cirosuna/CGCourse2026 /Users/cirosuna/CGCourse2026/src/code_01_setup_glfw /Users/cirosuna/CGCourse2026 /Users/cirosuna/CGCourse2026/src/code_01_setup_glfw /Users/cirosuna/CGCourse2026/src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/DependInfo.cmake "--color=$(COLOR)" code_01_setup_glfw
 .PHONY : src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/depend
 

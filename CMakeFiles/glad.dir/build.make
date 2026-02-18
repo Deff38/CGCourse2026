@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E rm -f
+RM = /opt/homebrew/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/deff/CGCourse2026
+CMAKE_SOURCE_DIR = /Users/cirosuna/CGCourse2026
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/deff/CGCourse2026
+CMAKE_BINARY_DIR = /Users/cirosuna/CGCourse2026
 
 # Include any dependencies generated for this target.
 include CMakeFiles/glad.dir/depend.make
@@ -75,16 +75,16 @@ CMakeFiles/glad.dir/codegen:
 CMakeFiles/glad.dir/external/glad/src/glad.c.o: CMakeFiles/glad.dir/flags.make
 CMakeFiles/glad.dir/external/glad/src/glad.c.o: external/glad/src/glad.c
 CMakeFiles/glad.dir/external/glad/src/glad.c.o: CMakeFiles/glad.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/deff/CGCourse2026/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/glad.dir/external/glad/src/glad.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/glad.dir/external/glad/src/glad.c.o -MF CMakeFiles/glad.dir/external/glad/src/glad.c.o.d -o CMakeFiles/glad.dir/external/glad/src/glad.c.o -c /home/deff/CGCourse2026/external/glad/src/glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cirosuna/CGCourse2026/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/glad.dir/external/glad/src/glad.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/glad.dir/external/glad/src/glad.c.o -MF CMakeFiles/glad.dir/external/glad/src/glad.c.o.d -o CMakeFiles/glad.dir/external/glad/src/glad.c.o -c /Users/cirosuna/CGCourse2026/external/glad/src/glad.c
 
 CMakeFiles/glad.dir/external/glad/src/glad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/glad.dir/external/glad/src/glad.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/deff/CGCourse2026/external/glad/src/glad.c > CMakeFiles/glad.dir/external/glad/src/glad.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cirosuna/CGCourse2026/external/glad/src/glad.c > CMakeFiles/glad.dir/external/glad/src/glad.c.i
 
 CMakeFiles/glad.dir/external/glad/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/glad.dir/external/glad/src/glad.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/deff/CGCourse2026/external/glad/src/glad.c -o CMakeFiles/glad.dir/external/glad/src/glad.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cirosuna/CGCourse2026/external/glad/src/glad.c -o CMakeFiles/glad.dir/external/glad/src/glad.c.s
 
 # Object files for target glad
 glad_OBJECTS = \
@@ -96,7 +96,7 @@ glad_EXTERNAL_OBJECTS =
 libglad.a: CMakeFiles/glad.dir/external/glad/src/glad.c.o
 libglad.a: CMakeFiles/glad.dir/build.make
 libglad.a: CMakeFiles/glad.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/deff/CGCourse2026/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libglad.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/cirosuna/CGCourse2026/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libglad.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/glad.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glad.dir/link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +109,6 @@ CMakeFiles/glad.dir/clean:
 .PHONY : CMakeFiles/glad.dir/clean
 
 CMakeFiles/glad.dir/depend:
-	cd /home/deff/CGCourse2026 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/deff/CGCourse2026 /home/deff/CGCourse2026 /home/deff/CGCourse2026 /home/deff/CGCourse2026 /home/deff/CGCourse2026/CMakeFiles/glad.dir/DependInfo.cmake "--color=$(COLOR)" glad
+	cd /Users/cirosuna/CGCourse2026 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cirosuna/CGCourse2026 /Users/cirosuna/CGCourse2026 /Users/cirosuna/CGCourse2026 /Users/cirosuna/CGCourse2026 /Users/cirosuna/CGCourse2026/CMakeFiles/glad.dir/DependInfo.cmake "--color=$(COLOR)" glad
 .PHONY : CMakeFiles/glad.dir/depend
 

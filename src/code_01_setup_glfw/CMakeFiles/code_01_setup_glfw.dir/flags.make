@@ -4,7 +4,9 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/deff/CGCourse2026/external/glfw/include -I/home/deff/CGCourse2026/external/glad/include
+CXX_INCLUDES = -I/Users/cirosuna/CGCourse2026/external/glfw/include -I/Users/cirosuna/CGCourse2026/external/glad/include -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
 
-CXX_FLAGS = -std=gnu++17
+CXX_FLAGSarm64 = -std=gnu++17 -arch arm64
+
+CXX_FLAGS = -std=gnu++17 -arch arm64
 
