@@ -136,14 +136,18 @@ int main(int argc, char** argv) {
     ///* specify the data format */
     glVertexAttribPointer(colorAttribIndex, 3, GL_FLOAT, false, 5 * sizeof(float), (void*)(2 * sizeof(float)));
 
+    // Create a separate VAO for the grid
+    GLuint vaGrid;
+    glGenVertexArrays(1, &vaGrid);
+    glBindVertexArray(vaGrid);
 
-    GLuint matrix = 2;
-    GLuint matrixColor = 3;
-
-    GLuint matid {create_box2d(2,3)};
+    GLuint matid {create_box2d(12,3)};
     glBindBuffer(GL_ARRAY_BUFFER, matid);
 
-    std::vector<GLuint> indices {create_grid_indices(2,3)};
+    std::vector<GLuint> indices {create_grid_indices(12,3)};
+
+    GLuint matrix = 0;
+    GLuint matrixColor = 1;
 
     glEnableVertexAttribArray(matrix);
     glVertexAttribPointer(matrix, 2, GL_FLOAT, false, 5 * sizeof(float), 0);
@@ -182,9 +186,14 @@ int main(int argc, char** argv) {
         layout (location = 0) out vec4 color;\
         in vec3 vColor;\
         uniform float uDelta;\
+        uniform bool grid_frame;\
         void main(void)\
         {\
-            color = vec4(vColor+vec3(uDelta,0.0,0.0), 1.0);\
+            if (grid_frame) {\
+                color = vec4(0.0, 0.0, 0.0, 1.0);\
+            } else {\
+                color = vec4(vColor+vec3(uDelta,0.0,0.0), 1.0);\
+            }\
         }";
     const GLchar* fs_source = (const GLchar*)fragment_shader_src.c_str();
     
@@ -199,9 +208,6 @@ int main(int argc, char** argv) {
      
     glBindAttribLocation(program_shader, positionAttribIndex, "aPosition");
     glBindAttribLocation(program_shader, colorAttribIndex, "aColor");
-   
-    glBindAttribLocation(program_shader, matrix, "aPosition");
-    glBindAttribLocation(program_shader, matrixColor, "aColor");
 
     glLinkProgram(program_shader);
 
@@ -213,6 +219,7 @@ int main(int argc, char** argv) {
     }
     
     GLint loc = glGetUniformLocation(program_shader, "uDelta");
+    GLint locGridframe = glGetUniformLocation(program_shader, "grid_frame");
 
     /* cal glGetError and print out the result in a more verbose style
     * __LINE__ and __FILE__ are precompiler directive that replace the value with the
@@ -238,8 +245,20 @@ int main(int argc, char** argv) {
         
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
        
-        // glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(vaGrid);
+        
+        
+        glUniform1i(locGridframe, 0);
+        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
         glDrawElements(GL_TRIANGLES, (GLsizei)indices.size(), GL_UNSIGNED_INT, 0);
+        
+        
+        glUniform1i(locGridframe, 1);
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        glDrawElements(GL_TRIANGLES, (GLsizei)indices.size(), GL_UNSIGNED_INT, 0);
+        
+        
+        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
 
