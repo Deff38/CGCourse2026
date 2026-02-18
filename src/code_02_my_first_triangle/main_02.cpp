@@ -60,7 +60,7 @@ GLuint create_box2d(int xsize, int ysize){
 int main(int argc, char** argv) {
 
 	GLFWwindow* window;
-
+ 
     /* Initialize the library */
     if (!glfwInit())
         return -1;

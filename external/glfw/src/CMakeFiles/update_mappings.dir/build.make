@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E rm -f
+RM = /opt/homebrew/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/deff/CGCourse2026
+CMAKE_SOURCE_DIR = /Users/cirosuna/CGCourse2026
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/deff/CGCourse2026
+CMAKE_BINARY_DIR = /Users/cirosuna/CGCourse2026
 
 # Utility rule file for update_mappings.
 
@@ -67,8 +67,8 @@ include external/glfw/src/CMakeFiles/update_mappings.dir/compiler_depend.make
 include external/glfw/src/CMakeFiles/update_mappings.dir/progress.make
 
 external/glfw/src/CMakeFiles/update_mappings:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/deff/CGCourse2026/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
-	cd /home/deff/CGCourse2026/external/glfw/src && /usr/bin/cmake -P /home/deff/CGCourse2026/external/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/cirosuna/CGCourse2026/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
+	cd /Users/cirosuna/CGCourse2026/external/glfw/src && /opt/homebrew/bin/cmake -P /Users/cirosuna/CGCourse2026/external/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
 
 external/glfw/src/CMakeFiles/update_mappings.dir/codegen:
 .PHONY : external/glfw/src/CMakeFiles/update_mappings.dir/codegen
@@ -82,10 +82,10 @@ external/glfw/src/CMakeFiles/update_mappings.dir/build: update_mappings
 .PHONY : external/glfw/src/CMakeFiles/update_mappings.dir/build
 
 external/glfw/src/CMakeFiles/update_mappings.dir/clean:
-	cd /home/deff/CGCourse2026/external/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
+	cd /Users/cirosuna/CGCourse2026/external/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
 .PHONY : external/glfw/src/CMakeFiles/update_mappings.dir/clean
 
 external/glfw/src/CMakeFiles/update_mappings.dir/depend:
-	cd /home/deff/CGCourse2026 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/deff/CGCourse2026 /home/deff/CGCourse2026/external/glfw/src /home/deff/CGCourse2026 /home/deff/CGCourse2026/external/glfw/src /home/deff/CGCourse2026/external/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake "--color=$(COLOR)" update_mappings
+	cd /Users/cirosuna/CGCourse2026 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cirosuna/CGCourse2026 /Users/cirosuna/CGCourse2026/external/glfw/src /Users/cirosuna/CGCourse2026 /Users/cirosuna/CGCourse2026/external/glfw/src /Users/cirosuna/CGCourse2026/external/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake "--color=$(COLOR)" update_mappings
 .PHONY : external/glfw/src/CMakeFiles/update_mappings.dir/depend
 
