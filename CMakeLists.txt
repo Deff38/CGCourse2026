@@ -2,6 +2,8 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(CGCourse LANGUAGES CXX C)  # Include C since GLAD is C
+add_compile_definitions(GLM_ENABLE_EXPERIMENTAL)
+
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -29,6 +31,11 @@ target_include_directories(glad PUBLIC external/glad/include)
 if(UNIX AND NOT APPLE)
   target_link_libraries(glad PUBLIC dl)
 endif()
+
+# GLM (header-only)
+add_library(glm INTERFACE)
+target_include_directories(glm INTERFACE external)
+
 
 # Make the include path for your sources available project-wide (optional)
 # include_directories(${CMAKE_SOURCE_DIR}/src)
