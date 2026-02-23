@@ -252,6 +252,32 @@ code_02_my_first_triangle/fast:
 	$(MAKE) $(MAKESILENT) -f src/code_02_my_first_triangle/CMakeFiles/code_02_my_first_triangle.dir/build.make src/code_02_my_first_triangle/CMakeFiles/code_02_my_first_triangle.dir/build
 .PHONY : code_02_my_first_triangle/fast
 
+#=============================================================================
+# Target rules for targets named code_03_wrapping_shaders_buffers
+
+# Build rule for target.
+code_03_wrapping_shaders_buffers: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 code_03_wrapping_shaders_buffers
+.PHONY : code_03_wrapping_shaders_buffers
+
+# fast build rule for target.
+code_03_wrapping_shaders_buffers/fast:
+	$(MAKE) $(MAKESILENT) -f src/code_03_wrapping_shaders_buffers/CMakeFiles/code_03_wrapping_shaders_buffers.dir/build.make src/code_03_wrapping_shaders_buffers/CMakeFiles/code_03_wrapping_shaders_buffers.dir/build
+.PHONY : code_03_wrapping_shaders_buffers/fast
+
+#=============================================================================
+# Target rules for targets named code_04_robotic_arm_transformations
+
+# Build rule for target.
+code_04_robotic_arm_transformations: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 code_04_robotic_arm_transformations
+.PHONY : code_04_robotic_arm_transformations
+
+# fast build rule for target.
+code_04_robotic_arm_transformations/fast:
+	$(MAKE) $(MAKESILENT) -f src/code_04_robotic_arm_transformations/CMakeFiles/code_04_robotic_arm_transformations.dir/build.make src/code_04_robotic_arm_transformations/CMakeFiles/code_04_robotic_arm_transformations.dir/build
+.PHONY : code_04_robotic_arm_transformations/fast
+
 external/glad/src/glad.o: external/glad/src/glad.c.o
 .PHONY : external/glad/src/glad.o
 
@@ -293,6 +319,8 @@ help:
 	@echo "... code_00_raytracer"
 	@echo "... code_01_setup_glfw"
 	@echo "... code_02_my_first_triangle"
+	@echo "... code_03_wrapping_shaders_buffers"
+	@echo "... code_04_robotic_arm_transformations"
 	@echo "... glad"
 	@echo "... glfw"
 	@echo "... external/glad/src/glad.o"

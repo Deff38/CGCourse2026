@@ -47,3 +47,17 @@
 /home/deff/CGCourse2026/src/code_02_my_first_triangle/CMakeFiles/install.dir
 /home/deff/CGCourse2026/src/code_02_my_first_triangle/CMakeFiles/install/local.dir
 /home/deff/CGCourse2026/src/code_02_my_first_triangle/CMakeFiles/install/strip.dir
+/home/deff/CGCourse2026/src/code_03_wrapping_shaders_buffers/CMakeFiles/code_03_wrapping_shaders_buffers.dir
+/home/deff/CGCourse2026/src/code_03_wrapping_shaders_buffers/CMakeFiles/edit_cache.dir
+/home/deff/CGCourse2026/src/code_03_wrapping_shaders_buffers/CMakeFiles/rebuild_cache.dir
+/home/deff/CGCourse2026/src/code_03_wrapping_shaders_buffers/CMakeFiles/list_install_components.dir
+/home/deff/CGCourse2026/src/code_03_wrapping_shaders_buffers/CMakeFiles/install.dir
+/home/deff/CGCourse2026/src/code_03_wrapping_shaders_buffers/CMakeFiles/install/local.dir
+/home/deff/CGCourse2026/src/code_03_wrapping_shaders_buffers/CMakeFiles/install/strip.dir
+/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations/CMakeFiles/code_04_robotic_arm_transformations.dir
+/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations/CMakeFiles/edit_cache.dir
+/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations/CMakeFiles/rebuild_cache.dir
+/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations/CMakeFiles/list_install_components.dir
+/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations/CMakeFiles/install.dir
+/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations/CMakeFiles/install/local.dir
+/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations/CMakeFiles/install/strip.dir
