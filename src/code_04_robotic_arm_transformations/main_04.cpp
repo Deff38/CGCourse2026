@@ -92,7 +92,7 @@ int main(int argc, char** argv) {
 
     renderable quad, frame;
     frame = shape_maker::frame();
-    quad = shape_maker::quad();
+    quad = shape_maker::cube();
     
 
     shader s;
@@ -106,17 +106,20 @@ int main(int argc, char** argv) {
     */
     check_gl_errors(__LINE__, __FILE__);
 
-    glm::mat4 glob = glm::scale(glm::vec3(0.01, 0.01, 1));
+	glm::mat4 view = glm::lookAt(glm::vec3(200, 200, 200), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
+	glm::mat4 proj = glm::perspective(glm::radians(45.0f), 1.0f, 1.f, 500.0f);
 
-    glm::mat4 s_s = glm::scale(glm::vec3(10, 10, 1));
-    glm::mat4 s_a = glm::scale(glm::vec3(15, 5, 1));
+
+
+    glm::mat4 s_s = glm::scale(glm::vec3(10, 10, 10));
+    glm::mat4 s_a = glm::scale(glm::vec3(15, 5, 5));
     glm::mat4 t_a = glm::translate(glm::vec3(25, 0, 0));
 
-    glm::mat4 s_e = glm::scale(glm::vec3(8, 8, 1));
-    glm::mat4 s_f = glm::scale(glm::vec3(12, 4, 1));
+    glm::mat4 s_e = glm::scale(glm::vec3(8, 8, 8));
+    glm::mat4 s_f = glm::scale(glm::vec3(12, 4, 4));
     glm::mat4 t_f = glm::translate(glm::vec3(20, 0, 0));
 
-    glm::mat4 s_w = glm::scale(glm::vec3(6, 6, 1));
+    glm::mat4 s_w = glm::scale(glm::vec3(6, 6, 6));
 
     glm::mat4 W = glm::translate(glm::vec3(30, 0, 0));
 
@@ -144,9 +147,10 @@ int main(int argc, char** argv) {
 
     matrix_stack stack;
 
-    stack.mult(glob);
+    stack.mult(proj*view );
 
-    glDisable(GL_DEPTH_TEST);
+    float alpha = 0.0;
+    glEnable(GL_DEPTH_TEST);
     while (!glfwWindowShouldClose(window))
     {
         glm::mat4 r_S = glm::rotate(alpha_S, glm::vec3(0, 0, 1));
@@ -156,12 +160,14 @@ int main(int argc, char** argv) {
         glm::mat4 r_k2 = glm::rotate(alpha_k2,glm::vec3(0, 0, 1));
         glm::mat4 r_k3 = glm::rotate(alpha_k3,glm::vec3(0, 0, 1));
 
+		glm::mat4 r = glm::rotate(alpha+=0.01, glm::vec3(0, 1, 0));
+
         /* Render here */
         glClearColor(0.2, 0.2, 0.2, 1);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   
         stack.push();
-
+        stack.mult(r);
         stack.mult(glm::translate(glm::vec3(0, -30, 0)));
 
         stack.mult(r_S);
