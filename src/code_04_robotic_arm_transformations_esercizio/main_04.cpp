@@ -33,9 +33,13 @@ void keyboard_callback(GLFWwindow* window, int key, int scancode, int action, in
             break;
         case GLFW_KEY_J:
             alpha_k1 += 0.04;
+            alpha_k2 += 0.04;
+            alpha_k3 += 0.04;
             break;
         case GLFW_KEY_K:
             alpha_k1 -= 0.04;
+            alpha_k2 -= 0.04;
+            alpha_k3 -= 0.04;
             break;
         default:
             break;
@@ -108,20 +112,26 @@ int main(int argc, char** argv) {
 
     glm::mat4 glob = glm::scale(glm::vec3(0.01, 0.01, 1));
 
+    // Shoulder 
     glm::mat4 s_s = glm::scale(glm::vec3(10, 10, 1));
+
+    // Arm
     glm::mat4 s_a = glm::scale(glm::vec3(15, 5, 1));
     glm::mat4 t_a = glm::translate(glm::vec3(25, 0, 0));
 
+    // Elbow
     glm::mat4 s_e = glm::scale(glm::vec3(8, 8, 1));
+    glm::mat4 t_e = glm::translate(glm::vec3(40, 0, 0));
+
+    // Forearm
     glm::mat4 s_f = glm::scale(glm::vec3(12, 4, 1));
     glm::mat4 t_f = glm::translate(glm::vec3(20, 0, 0));
 
+    // Wrist
     glm::mat4 s_w = glm::scale(glm::vec3(6, 6, 1));
+    glm::mat4 t_w = glm::translate(glm::vec3(30, 0, 0));
 
-    glm::mat4 W = glm::translate(glm::vec3(30, 0, 0));
-
-    glm::mat4 E = glm::translate(glm::vec3(40, 0, 0));
-
+    // Knuckles
     glm::mat4 s_k1 = glm::scale(glm::vec3(1,1,1));
     glm::mat4 t_k1 = glm::translate(glm::vec3(6,0,0));
 
@@ -131,14 +141,15 @@ int main(int argc, char** argv) {
     glm::mat4 s_k3 = glm::scale(glm::vec3(1,1,1));
     glm::mat4 t_k3 = glm::translate(glm::vec3(6,-3,0));
 
+    // Fingers
     glm::mat4 s_f1 = glm::scale(glm::vec3(3,1,1));
     glm::mat4 t_f1 = glm::translate(glm::vec3(4,0,0));
 
     glm::mat4 s_f2 = glm::scale(glm::vec3(3,1,1));
-    glm::mat4 t_f2 = glm::translate(glm::vec3(4,3,0));
+    glm::mat4 t_f2 = glm::translate(glm::vec3(4,0,0));
 
     glm::mat4 s_f3 = glm::scale(glm::vec3(3,1,1));
-    glm::mat4 t_f3 = glm::translate(glm::vec3(4,-3,0));
+    glm::mat4 t_f3 = glm::translate(glm::vec3(4,0,0));
 
     alpha_S,alpha_E ,alpha_W, alpha_k1, alpha_k2, alpha_k3 = 0.0;
 
@@ -147,111 +158,145 @@ int main(int argc, char** argv) {
     stack.mult(glob);
 
     glDisable(GL_DEPTH_TEST);
+    
     while (!glfwWindowShouldClose(window))
     {
         glm::mat4 r_S = glm::rotate(alpha_S, glm::vec3(0, 0, 1));
         glm::mat4 r_E = glm::rotate(alpha_E, glm::vec3(0, 0, 1));
         glm::mat4 r_W = glm::rotate(alpha_W, glm::vec3(0, 0, 1));
-        glm::mat4 r_k1 = glm::rotate(alpha_k1,glm::vec3(0, 0, 1));
-        glm::mat4 r_k2 = glm::rotate(alpha_k2,glm::vec3(0, 0, 1));
-        glm::mat4 r_k3 = glm::rotate(alpha_k3,glm::vec3(0, 0, 1));
+        glm::mat4 r_k1 = glm::rotate(alpha_k1, glm::vec3(0, 0, 1));
+        glm::mat4 r_k2 = glm::rotate(alpha_k2, glm::vec3(0, 0, 1));
+        glm::mat4 r_k3 = glm::rotate(alpha_k3, glm::vec3(0, 0, 1));
 
         /* Render here */
         glClearColor(0.2, 0.2, 0.2, 1);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   
-        stack.push();
-
-        stack.mult(glm::translate(glm::vec3(0, -30, 0)));
-
-        stack.mult(r_S);
-
-        stack.push();
-        stack.mult(s_s);
-
-
-        // Shoulder
-        glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
-        stack.pop();
-        glUniform3f(s["uCol"], 0.3, 0.3, 0.6);
-        quad.bind();
-        glDrawElements(quad().mode, quad().count, quad().itype, NULL);
         
-        // Arm
-        stack.push();
-        stack.mult(t_a * s_a);       
-        glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
-        stack.pop();
-        glUniform3f(s["uCol"], 0.2, 0.3, 0.6);
-        quad.bind();
-        glDrawElements(quad().mode, quad().count, quad().itype, NULL);
+        stack.push(); 
 
+        stack.mult(glm::translate(glm::vec3(0, -30, 0))); 
+
+        // Shoulder frame
+        stack.mult(r_S); 
+        
+        // Shoulder
+        stack.push(); 
+            stack.mult(s_s);
+            glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
+            glUniform3f(s["uCol"], 0.3, 0.3, 0.6);
+            quad.bind();
+            glDrawElements(quad().mode, quad().count, quad().itype, NULL);
+        stack.pop();
+
+        // Arm
+        stack.push(); 
+            stack.mult(t_a * s_a);  
+            glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
+            glUniform3f(s["uCol"], 0.2, 0.3, 0.6);
+            glDrawElements(quad().mode, quad().count, quad().itype, NULL);
+        stack.pop();
 
         // Elbow frame
-        stack.mult(E * r_E);
-        stack.push();
-
+        stack.mult(t_e * r_E); 
+        
         // Elbow
-        stack.mult(s_e);
-
-        glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
+        stack.push(); 
+            stack.mult(s_e);
+            glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
+            glUniform3f(s["uCol"], 0.4, 0.3, 0.5);
+            glDrawElements(quad().mode, quad().count, quad().itype, NULL);
         stack.pop();
 
-        glUniform3f(s["uCol"], 0.4, 0.3, 0.5);
-        quad.bind();
-        glDrawElements(quad().mode, quad().count, quad().itype, NULL);
+        // Forearm
+        stack.push();
+            stack.mult(t_f * s_f);
+            glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
+            glUniform3f(s["uCol"], 0.4, 0.2, 0.5);
+            glDrawElements(quad().mode, quad().count, quad().itype, NULL);
+        stack.pop();
+
+        // Wrist frame
+        stack.mult(t_w * r_W); 
+        
+        // Wrist
+        stack.push(); 
+            stack.mult(s_w);
+            glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
+            glUniform3f(s["uCol"], 0.4, 0.5, 0.0);
+            glDrawElements(quad().mode, quad().count, quad().itype, NULL);
+        stack.pop();
+
+
+        // ----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        // Knuckle frame 1
+        stack.push(); 
+            stack.mult(t_k1 * r_k1); 
+            
+            // Knuckle
+            stack.push(); 
+                stack.mult(s_k1);
+                glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
+                glUniform3f(s["uCol"], 0.8, 0.3, 0.2);
+                glDrawElements(quad().mode, quad().count, quad().itype, NULL);
+            stack.pop();
+            
+            // Finger
+            stack.push(); 
+                stack.mult(t_f1 * s_f1);
+                glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
+                glUniform3f(s["uCol"], 0.8, 0.2, 0.2); 
+                glDrawElements(quad().mode, quad().count, quad().itype, NULL);
+            stack.pop();
+        stack.pop(); 
+
+        // Knuckle frame 2
+        stack.push(); 
+            stack.mult(t_k2 * r_k2); 
+
+            // Knuckle 2
+            stack.push(); 
+                stack.mult(s_k2);
+                glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
+                glUniform3f(s["uCol"], 0.8, 0.3, 0.2);
+                glDrawElements(quad().mode, quad().count, quad().itype, NULL);
+            stack.pop();
+            
+            // Finger 2
+            stack.push(); 
+                stack.mult(t_f2 * s_f2);
+                glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
+                glUniform3f(s["uCol"], 0.8, 0.2, 0.2); 
+                glDrawElements(quad().mode, quad().count, quad().itype, NULL);
+            stack.pop();
+        stack.pop();
+
+        // Knuckle frame 3
+        stack.push(); 
+            stack.mult(t_k3 * r_k3); 
+            
+            // Knuckle 3
+            stack.push(); 
+                stack.mult(s_k3);
+                glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
+                glUniform3f(s["uCol"], 0.8, 0.3, 0.2);
+                glDrawElements(quad().mode, quad().count, quad().itype, NULL);
+            stack.pop();
+            
+            // Finger 3
+            stack.push();
+                stack.mult(t_f3 * s_f3);
+                glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
+                glUniform3f(s["uCol"], 0.8, 0.2, 0.2); 
+                glDrawElements(quad().mode, quad().count, quad().itype, NULL);
+            stack.pop();
+        stack.pop(); 
 
         
-        stack.push();
+        stack.pop(); 
 
-        // forearm
-        stack.mult(t_f * s_f);
-
-        glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
-        stack.pop();
-        glUniform3f(s["uCol"], 0.4, 0.2, 0.5);
-        quad.bind();
-        glDrawElements(quad().mode, quad().count, quad().itype, NULL);
-
-        // Wrist Frame
-        stack.mult(W * r_W);
-        stack.push();
-
-        // wrist
-        stack.mult(s_w);
-        glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
-        stack.pop();
-        
-        glUniform3f(s["uCol"], 0.4, 0.5, 0.0);
-        quad.bind();
-        glDrawElements(quad().mode, quad().count, quad().itype, NULL);
-        
-        
-        // Knuckle frame
-        stack.mult(t_k1 * r_k1);
-        stack.push();
-
-       
-        stack.mult(s_k1);
-
-        glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
-        stack.pop();
-
-        glUniform3f(s["uCol"], 0.8, 0.3, 0.2);
-        quad.bind();
-        glDrawElements(quad().mode, quad().count, quad().itype, NULL);
-
-        // Fingers
-        stack.push();
-        stack.mult(t_f1 * s_f1);
-        glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
-        stack.pop();
-        glUniform3f(s["uCol"], 0.8, 0.2, 0.2); 
-        quad.bind();
-        glDrawElements(quad().mode, quad().count, quad().itype, NULL);
-
-
-        stack.pop();
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
 
@@ -260,6 +305,5 @@ int main(int argc, char** argv) {
     }
 
     glfwTerminate();
-
     return 0;
 }
