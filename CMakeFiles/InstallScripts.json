@@ -9,7 +9,8 @@
 		"/home/deff/CGCourse2026/src/code_01_setup_glfw/cmake_install.cmake",
 		"/home/deff/CGCourse2026/src/code_02_my_first_triangle/cmake_install.cmake",
 		"/home/deff/CGCourse2026/src/code_03_wrapping_shaders_buffers/cmake_install.cmake",
-		"/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations/cmake_install.cmake"
+		"/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations/cmake_install.cmake",
+		"/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations_esercizio/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

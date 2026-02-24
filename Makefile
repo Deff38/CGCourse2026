@@ -278,6 +278,19 @@ code_04_robotic_arm_transformations/fast:
 	$(MAKE) $(MAKESILENT) -f src/code_04_robotic_arm_transformations/CMakeFiles/code_04_robotic_arm_transformations.dir/build.make src/code_04_robotic_arm_transformations/CMakeFiles/code_04_robotic_arm_transformations.dir/build
 .PHONY : code_04_robotic_arm_transformations/fast
 
+#=============================================================================
+# Target rules for targets named code_04_robotic_arm_transformations_esercizio
+
+# Build rule for target.
+code_04_robotic_arm_transformations_esercizio: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 code_04_robotic_arm_transformations_esercizio
+.PHONY : code_04_robotic_arm_transformations_esercizio
+
+# fast build rule for target.
+code_04_robotic_arm_transformations_esercizio/fast:
+	$(MAKE) $(MAKESILENT) -f src/code_04_robotic_arm_transformations_esercizio/CMakeFiles/code_04_robotic_arm_transformations_esercizio.dir/build.make src/code_04_robotic_arm_transformations_esercizio/CMakeFiles/code_04_robotic_arm_transformations_esercizio.dir/build
+.PHONY : code_04_robotic_arm_transformations_esercizio/fast
+
 external/glad/src/glad.o: external/glad/src/glad.c.o
 .PHONY : external/glad/src/glad.o
 
@@ -321,6 +334,7 @@ help:
 	@echo "... code_02_my_first_triangle"
 	@echo "... code_03_wrapping_shaders_buffers"
 	@echo "... code_04_robotic_arm_transformations"
+	@echo "... code_04_robotic_arm_transformations_esercizio"
 	@echo "... glad"
 	@echo "... glfw"
 	@echo "... external/glad/src/glad.o"
