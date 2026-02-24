@@ -7,7 +7,8 @@
 #include "../common/matrix_stack.h"
 #include "../common/shaders.h"
 
-float alpha_S, alpha_E,alpha_W;
+
+float alpha_S, alpha_E,alpha_W,alpha_k1, alpha_k2, alpha_k3;
 
 void keyboard_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
     if (action == GLFW_PRESS || action == GLFW_REPEAT) {
@@ -29,6 +30,12 @@ void keyboard_callback(GLFWwindow* window, int key, int scancode, int action, in
             break;
         case GLFW_KEY_H:
             alpha_W -= 0.04;
+            break;
+        case GLFW_KEY_J:
+            alpha_k1 += 0.04;
+            break;
+        case GLFW_KEY_K:
+            alpha_k1 -= 0.04;
             break;
         default:
             break;
@@ -114,7 +121,26 @@ int main(int argc, char** argv) {
     glm::mat4 W = glm::translate(glm::vec3(30, 0, 0));
 
     glm::mat4 E = glm::translate(glm::vec3(40, 0, 0));
-    alpha_S,alpha_E ,alpha_W= 0.0;
+
+    glm::mat4 s_k1 = glm::scale(glm::vec3(1,1,1));
+    glm::mat4 t_k1 = glm::translate(glm::vec3(6,0,0));
+
+    glm::mat4 s_k2 = glm::scale(glm::vec3(1,1,1));
+    glm::mat4 t_k2 = glm::translate(glm::vec3(6,3,0));
+
+    glm::mat4 s_k3 = glm::scale(glm::vec3(1,1,1));
+    glm::mat4 t_k3 = glm::translate(glm::vec3(6,-3,0));
+
+    glm::mat4 s_f1 = glm::scale(glm::vec3(3,1,1));
+    glm::mat4 t_f1 = glm::translate(glm::vec3(4,0,0));
+
+    glm::mat4 s_f2 = glm::scale(glm::vec3(3,1,1));
+    glm::mat4 t_f2 = glm::translate(glm::vec3(4,3,0));
+
+    glm::mat4 s_f3 = glm::scale(glm::vec3(3,1,1));
+    glm::mat4 t_f3 = glm::translate(glm::vec3(4,-3,0));
+
+    alpha_S,alpha_E ,alpha_W, alpha_k1, alpha_k2, alpha_k3 = 0.0;
 
     matrix_stack stack;
 
@@ -126,6 +152,9 @@ int main(int argc, char** argv) {
         glm::mat4 r_S = glm::rotate(alpha_S, glm::vec3(0, 0, 1));
         glm::mat4 r_E = glm::rotate(alpha_E, glm::vec3(0, 0, 1));
         glm::mat4 r_W = glm::rotate(alpha_W, glm::vec3(0, 0, 1));
+        glm::mat4 r_k1 = glm::rotate(alpha_k1,glm::vec3(0, 0, 1));
+        glm::mat4 r_k2 = glm::rotate(alpha_k2,glm::vec3(0, 0, 1));
+        glm::mat4 r_k3 = glm::rotate(alpha_k3,glm::vec3(0, 0, 1));
 
         /* Render here */
         glClearColor(0.2, 0.2, 0.2, 1);
@@ -140,7 +169,6 @@ int main(int argc, char** argv) {
         stack.push();
         stack.mult(s_s);
 
-        // Shoulder frame
 
         // Shoulder
         glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
@@ -148,7 +176,7 @@ int main(int argc, char** argv) {
         glUniform3f(s["uCol"], 0.3, 0.3, 0.6);
         quad.bind();
         glDrawElements(quad().mode, quad().count, quad().itype, NULL);
-
+        
         // Arm
         stack.push();
         stack.mult(t_a * s_a);       
@@ -185,20 +213,46 @@ int main(int argc, char** argv) {
         quad.bind();
         glDrawElements(quad().mode, quad().count, quad().itype, NULL);
 
-
+        // Wrist Frame
+        stack.mult(W * r_W);
         stack.push();
+
         // wrist
-        stack.mult(W * r_W * s_w);
+        stack.mult(s_w);
         glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
         stack.pop();
-
+        
         glUniform3f(s["uCol"], 0.4, 0.5, 0.0);
         quad.bind();
         glDrawElements(quad().mode, quad().count, quad().itype, NULL);
+        
+        
+        // Knuckle frame
+        stack.mult(t_k1 * r_k1);
+        stack.push();
 
+       
+        stack.mult(s_k1);
 
+        glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
         stack.pop();
 
+        glUniform3f(s["uCol"], 0.8, 0.3, 0.2);
+        quad.bind();
+        glDrawElements(quad().mode, quad().count, quad().itype, NULL);
+
+        // Fingers
+        stack.push();
+        stack.mult(t_f1 * s_f1);
+        glUniformMatrix4fv(s["uM"], 1, GL_FALSE, glm::value_ptr(stack.m()));
+        stack.pop();
+        glUniform3f(s["uCol"], 0.8, 0.2, 0.2); 
+        quad.bind();
+        glDrawElements(quad().mode, quad().count, quad().itype, NULL);
+
+        stack.push();
+
+        stack.pop();
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
 

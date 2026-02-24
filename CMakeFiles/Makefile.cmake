@@ -20,6 +20,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "src/code_00_raytracer/CMakeLists.txt"
   "src/code_01_setup_glfw/CMakeLists.txt"
   "src/code_02_my_first_triangle/CMakeLists.txt"
+  "src/code_03_wrapping_shaders_buffers/CMakeLists.txt"
+  "src/code_04_robotic_arm_transformations/CMakeLists.txt"
   "/usr/share/cmake/Modules/BasicConfigVersion-SameMajorVersion.cmake.in"
   "/usr/share/cmake/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake/Modules/CMakeCXXInformation.cmake"
@@ -89,6 +91,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/code_00_raytracer/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/code_01_setup_glfw/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/code_02_my_first_triangle/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/code_03_wrapping_shaders_buffers/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/code_04_robotic_arm_transformations/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -100,4 +104,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/code_00_raytracer/CMakeFiles/code_00_raytracer.dir/DependInfo.cmake"
   "src/code_01_setup_glfw/CMakeFiles/code_01_setup_glfw.dir/DependInfo.cmake"
   "src/code_02_my_first_triangle/CMakeFiles/code_02_my_first_triangle.dir/DependInfo.cmake"
+  "src/code_03_wrapping_shaders_buffers/CMakeFiles/code_03_wrapping_shaders_buffers.dir/DependInfo.cmake"
+  "src/code_04_robotic_arm_transformations/CMakeFiles/code_04_robotic_arm_transformations.dir/DependInfo.cmake"
   )
