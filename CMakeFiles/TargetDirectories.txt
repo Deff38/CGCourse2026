@@ -61,3 +61,10 @@
 /home/deff/CGCourse2026/src/code_04_robotic_arm_transformations/CMakeFiles/install.dir
 /home/deff/CGCourse2026/src/code_04_robotic_arm_transformations/CMakeFiles/install/local.dir
 /home/deff/CGCourse2026/src/code_04_robotic_arm_transformations/CMakeFiles/install/strip.dir
+/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations_esercizio/CMakeFiles/code_04_robotic_arm_transformations_esercizio.dir
+/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations_esercizio/CMakeFiles/edit_cache.dir
+/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations_esercizio/CMakeFiles/rebuild_cache.dir
+/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations_esercizio/CMakeFiles/list_install_components.dir
+/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations_esercizio/CMakeFiles/install.dir
+/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations_esercizio/CMakeFiles/install/local.dir
+/home/deff/CGCourse2026/src/code_04_robotic_arm_transformations_esercizio/CMakeFiles/install/strip.dir
